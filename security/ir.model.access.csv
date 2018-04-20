@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_salesafe_users_sale,salesafe.sale,model_salesafe_sale,salesafe.group_users_salesafe,1,1,1,0
+access_salesafe_users_product,salesafe.product,model_salesafe_product,salesafe.group_users_salesafe,1,1,1,0
+access_salesafe_users_sale_service,salesafe.sale_service,model_salesafe_sale_service,salesafe.group_users_salesafe,1,1,1,0
+access_salesafe_users_simple_product,salesafe.sale_simple_product,model_salesafe_product,salesafe.group_users_simple,1,1,1,0

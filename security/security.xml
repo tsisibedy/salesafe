@@ -1,0 +1,10 @@
+<odoo>
+    <data>
+        <record id="group_users_salesafe" model="res.groups">
+            <field name="name">SaleSafe/User</field>
+        </record>
+        <record id="group_users_simple" model="res.groups">
+            <field name="name">SaleSafe/User_simple_product</field>
+        </record>
+    </data>
+</odoo>

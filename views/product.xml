@@ -1,0 +1,55 @@
+<odoo>
+    <data>
+        <menuitem id="product_main_menu" action="product_action"
+                  parent="salesafe_main_menu" name="Manage the products"/>
+
+        <record id="product_view_edit_and_create" model="ir.ui.view">
+            <field name="name">Product view edit and create</field>
+            <field name="model">salesafe.product</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="price"/>
+                        </group>
+                        <group>
+                            <field name="date_arrival"/>
+                        </group>
+                        <group>
+                            <field name="nb_stock"/>
+                        </group>
+                        <group>
+                            <field name="nb_available"/>
+                        </group>
+                        <group>
+                            <field name="nb_sold"/>
+                        </group>
+                        <group>
+                            <field name="description"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="product_view_tree" model="ir.ui.view">
+            <field name="name">Product view tree</field>
+            <field name="model">salesafe.product</field>
+            <field name="arch" type="xml">
+                <tree decoration-danger="nb_available==0" decoration-warning="nb_available==1">
+                    <field name="name"/>
+                    <field name="price"/>
+                    <field name="date_arrival"/>
+                    <field name="nb_stock"/>
+                    <field name="nb_available"/>
+                    <field name="nb_sold"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+
+    </data>
+</odoo>

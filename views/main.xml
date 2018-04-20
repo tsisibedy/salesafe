@@ -1,0 +1,30 @@
+<odoo>
+    <data>
+        <!--salesafe product action-->
+        <record id="product_action" model="ir.actions.act_window">
+            <field name="name">Manage the products</field>
+            <field name="res_model">salesafe.product</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--salesafe sale action-->
+        <record id="sale_action" model="ir.actions.act_window">
+            <field name="name">Sale of the product</field>
+            <field name="res_model">salesafe.sale</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="sale_service_action" model="ir.actions.act_window">
+            <field name="name">Sale service of the product</field>
+            <field name="res_model">salesafe.sale_service</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--sale safe menu-->
+        <menuitem id="salesafe_main_menu" name="SaleSafe" web_icon="salesafe,static/src/img/salesafe.png"
+                  parent=""/>
+    </data>
+</odoo>
