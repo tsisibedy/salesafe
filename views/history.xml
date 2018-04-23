@@ -1,0 +1,54 @@
+<odoo>
+    <data>
+        <menuitem id="history_sub_menu" action="history_action"
+                  parent="promotion_main_menu" name="History"/>
+
+        <record id="history_view_edit_and_create" model="ir.ui.view">
+            <field name="name">History view edit and create</field>
+            <field name="model">salesafe.history</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="name_product"/>
+                        </group>
+                        <group>
+                            <field name="price_init"/>
+                        </group>
+                        <group>
+                            <field name="price_current"/>
+                        </group>
+                        <group>
+                            <field name="reduction"/>
+                        </group>
+                        <group>
+                            <field name="date_reduction"/>
+                        </group>
+                        <group>
+                            <field name="activeState"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="history_view_tree" model="ir.ui.view">
+            <field name="name">History view tree</field>
+            <field name="model">salesafe.history</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="name_product"/>
+                    <field name="price_init"/>
+                    <field name="price_current"/>
+                    <field name="reduction" widget="progressbar"/>
+                    <field name="date_reduction"/>
+                    <field name="activeState"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

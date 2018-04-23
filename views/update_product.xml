@@ -1,0 +1,39 @@
+<odoo>
+    <data>
+        <menuitem id="update_product_sub_menu" action="update_product_action"
+                  parent="stock_sub_menu" name="Manage stock updates"/>
+
+        <record id="update_product_view_edit_and_create" model="ir.ui.view">
+            <field name="name">Product update view edit and create</field>
+            <field name="model">salesafe.update_product</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="number_update"/>
+                        </group>
+                        <group>
+                            <field name="date_arrival"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="update_product_view_tree" model="ir.ui.view">
+            <field name="name">Product update view tree</field>
+            <field name="model">salesafe.update_product</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="number_update"/>
+                    <field name="date_arrival"/>
+                </tree>
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -5,7 +5,7 @@
             <field name="name">Manage the products</field>
             <field name="res_model">salesafe.product</field>
             <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">tree,form,graph</field>
         </record>
 
         <!--salesafe sale action-->
@@ -23,8 +23,30 @@
             <field name="view_mode">tree,form</field>
         </record>
 
+        <record id="promotion_action" model="ir.actions.act_window">
+            <field name="name">Product promotion</field>
+            <field name="res_model">salesafe.promotion</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="history_action" model="ir.actions.act_window">
+            <field name="name">History promotion</field>
+            <field name="res_model">salesafe.history</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="update_product_action" model="ir.actions.act_window">
+            <field name="name">Update product stock</field>
+            <field name="res_model">salesafe.update_product</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
         <!--sale safe menu-->
         <menuitem id="salesafe_main_menu" name="SaleSafe" web_icon="salesafe,static/src/img/salesafe.png"
                   parent=""/>
+
     </data>
 </odoo>

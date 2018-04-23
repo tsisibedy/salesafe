@@ -12,8 +12,15 @@ class Product(models.Model):
     nb_available = fields.Integer(string="Number of available product",readonly=True,compute="_set_nb_available")
     nb_sold = fields.Integer(string="Number of product sold",readonly=True)
     description = fields.Text(string="Product Description")
+    sold_poucentage = fields.Float(string="Percentage sold",compute="_set_sold_poucentage",store=True)
+
+    @api.depends('nb_stock','nb_sold')
+    def _set_sold_poucentage(self):
+        for record in self:
+            record.sold_poucentage = float((record.nb_sold*100)/record.nb_stock)
 
     @api.multi
+    @api.depends('nb_stock', 'nb_sold')
     def _set_nb_available(self):
         for record in self:
             record.nb_available = record.nb_stock - record.nb_sold

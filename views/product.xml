@@ -1,7 +1,10 @@
 <odoo>
     <data>
+        <menuitem id="stock_sub_menu" action=""
+                  parent="salesafe_main_menu" name="Manage the Stock"/>
+
         <menuitem id="product_main_menu" action="product_action"
-                  parent="salesafe_main_menu" name="Manage the products"/>
+                  parent="stock_sub_menu" name="Manage the product"/>
 
         <record id="product_view_edit_and_create" model="ir.ui.view">
             <field name="name">Product view edit and create</field>
@@ -45,9 +48,40 @@
                     <field name="date_arrival"/>
                     <field name="nb_stock"/>
                     <field name="nb_available"/>
+                    <field name="sold_poucentage" widget="progressbar"/>
                     <field name="nb_sold"/>
                     <field name="description"/>
                 </tree>
+            </field>
+        </record>
+
+        <record id="product_view_graph" model="ir.ui.view">
+            <field name="name">Product view graph</field>
+            <field name="model">salesafe.product</field>
+            <field name="arch" type="xml">
+                <graph type="bar">
+                    <field name="sold_poucentage" type="row"/>
+                    <field name="name" type="col"/>
+                    <field name="nb_sold" type="measure"/>
+                </graph>
+            </field>
+        </record>
+
+        <record id="product_filter_form" model="ir.ui.view">
+            <field name="name">Filter form</field>
+            <field name="model">salesafe.product</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="price"/>
+                    <field name="date_arrival"/>
+                    <field name="nb_stock"/>
+                    <field name="nb_available"/>
+                    <field name="sold_poucentage" widget="progressbar"/>
+                    <field name="nb_sold"/>
+                    <field name="description"/>
+                    <filter name="nb_available" string="Stock epuisé" domain="[('nb_available','=',0)]"/>
+                </search>
             </field>
         </record>
 

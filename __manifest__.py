@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 {
     'name': "SaleSafe",
     'icon': '/salesafe/static/src/img/salesafe.png',
@@ -26,8 +27,11 @@
         'views/print_received.xml',
         'views/main.xml',
         'views/product.xml',
+        'views/update_product.xml',
         'views/sale.xml',
         'views/sale_service.xml',
+        'views/promotion.xml',
+        'views/history.xml',
         'views/templates.xml',
     ],
     # only loaded in demonstration mode
@@ -35,4 +39,3 @@
         'demo/demo.xml',
     ],
 }
-# -*- coding: utf-8 -*-

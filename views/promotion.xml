@@ -1,0 +1,50 @@
+<odoo>
+    <data>
+        <menuitem id="promotion_main_menu" action="promotion_action"
+                  parent="salesafe_main_menu" name="Promotion Management"/>
+
+        <menuitem id="promotion_sub_menu" action="promotion_action"
+                  parent="promotion_main_menu" name="Promotion"/>
+
+        <record id="promotion_view_edit_and_create" model="ir.ui.view">
+            <field name="name">Promotion view edit and create</field>
+            <field name="model">salesafe.promotion</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name" attrs="{'readonly':[('name','=',True)]}"/>
+                        </group>
+                        <group>
+                            <field name="reduction"/>
+                        </group>
+                        <group>
+                            <field name="date_reduction"/>
+                        </group>
+                        <group>
+                            <field name="type_promotion"/>
+                        </group>
+                        <group>
+                            <field name="activeState"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="promotion_view_tree" model="ir.ui.view">
+            <field name="name">Promotion view tree</field>
+            <field name="model">salesafe.promotion</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="reduction" widget="progressbar"/>
+                    <field name="write_uid"/>
+                    <field name="date_reduction"/>
+                    <field name="type_promotion"/>
+                    <field name="activeState"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>
