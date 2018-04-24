@@ -13,7 +13,15 @@ class Promotion(models.Model):
         ('reduction', 'Réduction'),
         ('augmentation','Augmentation'),
     ],string="Promotion type",default='reduction')
-    activeState = fields.Boolean(string="Activation of the promation",default=False)
+    activeState = fields.Boolean(string="Activation of the promation",default=True)
+
+    @api.constrains('activeState')
+    def check_the_promotion(self):
+        statePromotion = self.env['salesafe.promotion'].search([('id','!=',self.id)])
+        for stateP in statePromotion:
+            if stateP.activeState == True:
+                raise ValueError('Une promotion est en cours de lancement vous devez la stopé avant de lancé une autre!')
+
 
     @api.model
     def create(self, vals):
@@ -109,10 +117,10 @@ class Promotion(models.Model):
     @api.multi
     def unlink(self):
         remove = self.env['salesafe.history']
-        executeUnlink = remove.search([])
-        for liste in executeUnlink:
-            if self.name == liste.name:
-                liste.unlink()
-
+        for unlinkSelf in self:
+            executeUnlink = remove.search([])
+            for liste in executeUnlink:
+                if unlinkSelf.name == liste.name:
+                    liste.unlink()
 
         return super(Promotion, self).unlink()
