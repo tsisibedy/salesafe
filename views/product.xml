@@ -50,6 +50,7 @@
                     <field name="nb_available"/>
                     <field name="sold_poucentage" widget="progressbar"/>
                     <field name="nb_sold"/>
+                    <field name="write_uid"/>
                     <field name="description"/>
                 </tree>
             </field>
@@ -80,7 +81,8 @@
                     <field name="sold_poucentage" widget="progressbar"/>
                     <field name="nb_sold"/>
                     <field name="description"/>
-                    <filter name="nb_available" string="Stock epuisé" domain="[('nb_available','=',0)]"/>
+                    <field name="write_uid"/>
+                    <filter name="nb_sold" string="Stock sans vendu" domain="[('nb_sold','=',0)]"/>
                 </search>
             </field>
         </record>

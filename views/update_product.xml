@@ -31,6 +31,7 @@
                     <field name="name"/>
                     <field name="number_update"/>
                     <field name="date_arrival"/>
+                    <field name="write_uid"/>
                 </tree>
             </field>
         </record>

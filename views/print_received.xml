@@ -36,6 +36,7 @@
                                 </t>
                                 <h1>List of your purchase</h1>
                                 <table>
+                                    <caption>Vendeur: <span t-field="doc.write_uid"/></caption>
                                     <thead>
                                         <tr>
                                             <th>Nom du produit</th>

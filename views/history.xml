@@ -1,7 +1,7 @@
 <odoo>
     <data>
         <menuitem id="history_sub_menu" action="history_action"
-                  parent="promotion_main_menu" name="History"/>
+                  parent="promotion_main_menu" name="Promotion history"/>
 
         <record id="history_view_edit_and_create" model="ir.ui.view">
             <field name="name">History view edit and create</field>
