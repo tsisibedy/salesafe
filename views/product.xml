@@ -61,8 +61,8 @@
             <field name="model">salesafe.product</field>
             <field name="arch" type="xml">
                 <graph type="bar">
-                    <field name="sold_poucentage" type="row"/>
-                    <field name="name" type="col"/>
+                    <field name="sold_poucentage" type="col"/>
+                    <field name="name" type="row"/>
                     <field name="nb_sold" type="measure"/>
                 </graph>
             </field>
