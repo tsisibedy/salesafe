@@ -18,7 +18,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base','board'],
 
     # always loaded
     'data': [
@@ -32,6 +32,7 @@
         'views/sale_service.xml',
         'views/promotion.xml',
         'views/history.xml',
+        'views/board.xml',
         'views/templates.xml',
     ],
     # only loaded in demonstration mode

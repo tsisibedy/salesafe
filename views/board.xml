@@ -1,0 +1,46 @@
+<odoo>
+    <data>
+        <record id="board_view_graph_product" model="ir.actions.act_window">
+            <field name="name">Board product</field>
+            <field name="res_model">salesafe.product</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">graph</field>
+            <field name="view_id" ref="salesafe.product_view_graph"/>
+        </record>
+
+        <record id="board_salesafe_form" model="ir.ui.view">
+            <field name="name">Board salesafe view</field>
+            <field name="model">salesafe.product</field>
+            <field name="arch" type="xml">
+                <form>
+                    <board style="2-1">
+                        <column>
+                            <action
+                                    string="Graph salesafe product"
+                                    name="%(board_view_graph_product)d"
+                                    width="1000"
+                                    height="600"/>
+                        </column>
+                    </board>
+                </form>
+            </field>
+        </record>
+
+        <record id="open_board_salesafe" model="ir.actions.act_window">
+            <field name="name">Dasboard salesafe</field>
+            <field name="res_model">salesafe.product</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">graph</field>
+            <field name="usage">menu</field>
+            <field name="view_id" ref="board_salesafe_form"/>
+        </record>
+
+        <menuitem
+                name="Salesafe board" parent="salesafe_main_menu"
+                action="open_board_salesafe"
+                sequence="1"
+                id="menu_board_salesafe"/>
+
+
+    </data>
+</odoo>

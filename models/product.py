@@ -4,6 +4,7 @@ from odoo import models, fields, api
 
 class Product(models.Model):
     _name = 'salesafe.product'
+    _order = 'name asc'
 
     name = fields.Char(string="Product Name",required=True)
     price = fields.Float(string="Price of the product",required=True)
