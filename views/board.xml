@@ -19,7 +19,7 @@
                             <action
                                     string="Graph salesafe product"
                                     name="%(board_view_graph_product)d"
-                                    width="1000"
+                                    width="500"
                                     height="600"/>
                         </column>
                     </board>

@@ -42,5 +42,26 @@
                 </tree>
             </field>
         </record>
+
+        <record model="ir.ui.view" id="sale_view_kanban_o">
+            <field name="name">Kanban display</field>
+            <field name="model">salesafe.sale</field>
+            <field name="arch" type="xml">
+                <kanban default_group_by="write_uid">
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_content">
+                                Id of purchase:
+                                <field name="name"/>
+                                Date of purchase:
+                                <field name="date_purchase"/>
+                                Total price of the product:
+                                <field name="total_price"/>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
     </data>
 </odoo>

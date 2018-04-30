@@ -13,7 +13,7 @@
             <field name="name">Sale of the product</field>
             <field name="res_model">salesafe.sale</field>
             <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">tree,form,kanban</field>
         </record>
 
         <record id="sale_service_action" model="ir.actions.act_window">

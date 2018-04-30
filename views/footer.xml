@@ -1,0 +1,9 @@
+<odoo>
+    <data>
+        <template id="salesafe-footer">
+            <footer class="container-fluid text-center">
+                <p>Footer Text</p>
+            </footer>
+        </template>
+    </data>
+</odoo>
