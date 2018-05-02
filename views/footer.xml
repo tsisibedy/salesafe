@@ -2,7 +2,9 @@
     <data>
         <template id="salesafe-footer">
             <footer class="container-fluid text-center">
-                <p>Footer Text</p>
+                <div class="jumbotron text-center">
+                    <h1>Salesafe Madagascar</h1>
+                </div>
             </footer>
         </template>
     </data>
